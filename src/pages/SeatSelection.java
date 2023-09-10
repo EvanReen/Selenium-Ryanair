@@ -22,16 +22,16 @@ public class SeatSelection extends AbstractComponent {
 		// TODO Auto-generated constructor stub
 	}
 	
-	 @FindBy(how=How.ID,using="seat-09E")
+	 @FindBy(how=How.ID,using="seat-11A")
 	 WebElement firstSeat;
 	 
-	 @FindBy(how=How.ID,using="seat-09F")
+	 @FindBy(how=How.ID,using="seat-11B")
 	 WebElement secondSeat;
 	 
-	 @FindBy(how=How.ID,using="seat-09E")
+	 @FindBy(how=How.ID,using="seat-11A")
 	 WebElement thirdSeat;
 	 
-	 @FindBy(how=How.ID,using="seat-09F")
+	 @FindBy(how=How.ID,using="seat-11B")
 	 WebElement fourthSeat;
 	
 	 @FindBy(how=How.CSS,using=".ry-button")
