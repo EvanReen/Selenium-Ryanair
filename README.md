@@ -1,5 +1,6 @@
 # Selenium-Ryanair
-Automating tests for Ryanair website
+Automating tests for Ryanair website.
+Note: seat selection. Seats might be booked/taken in the process so if the tests fail that will be the case. 
 
 # Requirements
 - Latest Java version (Java 17)
