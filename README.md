@@ -11,11 +11,11 @@ Note: seat selection. Seats might be booked/taken in the process so if the tests
     https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-import-a-Maven-project-from-GitHub-into-Eclipse
 # Steps to run this: 
 
-## Step 1: Clone Git Repo
+## Step 1: download zip file to this project and extract the folder 
 
-- git clone https://github.com/EvanReen/Selenium-Ryanair.git
+- make sure docker desktop is running 
 
-## Step 2: Change your directory to the project folder:
+## Step 2: Change your directory to the project folder where you extracted the zip file:
 
 - cd ProjectFolder
 
