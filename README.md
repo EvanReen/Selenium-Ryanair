@@ -6,8 +6,8 @@ Note: seat selection. Seats might be booked/taken in the process so if the tests
 - Latest Java version (Java 17)
 - maven
 - chrome web driver
-- If all steps to run this fail you can simply clone this repo in Eclipse. Here is a link to help you with that:
-    https://qaautomation.expert/2023/02/20/how-to-clone-a-project-from-github-using-eclipse/
+- If all steps to run this fail you can simply download the zip file of this project and import it into Eclipse IDE. Here is a link to help you with that:
+    https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-import-a-Maven-project-from-GitHub-into-Eclipse
 # Steps to run this: 
 
 ## Step 1: Clone Git Repo
