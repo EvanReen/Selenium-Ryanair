@@ -15,9 +15,9 @@ Note: seat selection. Seats might be booked/taken in the process so if the tests
 
 - git clone https://github.com/EvanReen/Selenium-Ryanair.git
 
-## Step 2: cd into where you have cloned the repo
+## Step 2: Change your directory to the project folder:
 
-- cd <your folder name>
+- cd <ProjectFolder>
 
 ## step 3: run the following commands 
 
