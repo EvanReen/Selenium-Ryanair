@@ -6,6 +6,7 @@ Note: seat selection. Seats might be booked/taken in the process so if the tests
 - Latest Java version (Java 17)
 - maven
 - chrome web driver
+- docker desktop
 - If all steps to run this fail you can simply download the zip file of this project and import it into Eclipse IDE. Here is a link to help you with that:
     https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-import-a-Maven-project-from-GitHub-into-Eclipse
 # Steps to run this: 
@@ -14,25 +15,24 @@ Note: seat selection. Seats might be booked/taken in the process so if the tests
 
 - git clone https://github.com/EvanReen/Selenium-Ryanair.git
 
-## Step 2: Set Up Java Development Environment
+## Step 2: cd into where you have cloned the repo
 
-- Ensure you have Java Development Kit (JDK) installed. You can download it from the official Oracle website or use OpenJDK.
+- cd <your folder name>
 
-## Step 3: Set Up WebDriver
+## step 3: run the following commands 
 
-- Download the WebDriver compatible with your browser (e.g., ChromeDriver for Google Chrome) and place it in a directory that's in your system's PATH.
-- Make sure you have the correct WebDriver version for your browser.
+1: mvn clean install
 
-## Step 4: Configure TestNG (if not already done)
+2: docker build -t ryanair-selenium-image .
 
-## Step 5: Install Dependencies (if using Maven)
+3: docker run -d -p 4444:4444 --name selenium-chrome ryanair-selenium-image
 
-- If the project uses Maven for dependency management, navigate to the project's root directory in your terminal and run:
-- mvn clean install
+## step 3 : run 'docker ps' command and copy the container ID and then run this command 
 
-## Step 7: Run the Tests
+- docker exec -it <container-id> bash
 
-- Open a terminal or command prompt.
-- Navigate to the project's root directory.
-- Execute the following command to run the tests using TestNG:
-- mvn test
+## step 4: run it usinhg this command
+
+- java -cp .:/usr/src/app/target/classes:/usr/src/app/target/libs/* RyanairTest.java
+
+
