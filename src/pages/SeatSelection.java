@@ -18,20 +18,19 @@ public class SeatSelection extends AbstractComponent {
 	public SeatSelection(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this); // Initialize WebElements using PageFactory
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver");
 		// TODO Auto-generated constructor stub
 	}
 	
-	 @FindBy(how=How.ID,using="seat-11A")
+	 @FindBy(how=How.ID,using="seat-15A")
 	 WebElement firstSeat;
 	 
-	 @FindBy(how=How.ID,using="seat-11B")
+	 @FindBy(how=How.ID,using="seat-15B")
 	 WebElement secondSeat;
 	 
-	 @FindBy(how=How.ID,using="seat-11A")
+	 @FindBy(how=How.ID,using="seat-12A")
 	 WebElement thirdSeat;
 	 
-	 @FindBy(how=How.ID,using="seat-11B")
+	 @FindBy(how=How.ID,using="seat-12B")
 	 WebElement fourthSeat;
 	
 	 @FindBy(how=How.CSS,using=".ry-button")
