@@ -17,7 +17,7 @@ Note: seat selection. Seats might be booked/taken in the process so if the tests
 
 ## Step 2: Change your directory to the project folder:
 
-- cd <ProjectFolder>
+- cd ProjectFolder
 
 ## step 3: run the following commands 
 
@@ -29,7 +29,7 @@ Note: seat selection. Seats might be booked/taken in the process so if the tests
 
 ## step 3 : run 'docker ps' command and copy the container ID and then run this command 
 
-- docker exec -it <container-id> bash
+- docker exec -it container-id bash
 
 ## step 4: run it usinhg this command
 
