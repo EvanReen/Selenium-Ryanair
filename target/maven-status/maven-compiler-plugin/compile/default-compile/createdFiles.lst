@@ -1,0 +1,8 @@
+pages\Flights.class
+pages\LoginPage.class
+pages\Passenger.class
+pages\SeatSelection.class
+pages\Bags.class
+pages\RyanairHome.class
+test\RyanairTest.class
+abstractComponents\AbstractComponent.class

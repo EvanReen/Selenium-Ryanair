@@ -26,7 +26,6 @@ public class RyanairHome extends AbstractComponent {
 	public RyanairHome(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this); // Initialize WebElements using PageFactory
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver");
     }
 	
 	//getting url 
@@ -35,8 +34,12 @@ public class RyanairHome extends AbstractComponent {
     }
 
     public boolean isHomePageLoaded() {
-    	WebElement pageTitle = driver.findElement(By.xpath("//title[contains(text(),'Ryanair')]"));
-        return pageTitle.isDisplayed();
+    	try {
+    		WebElement pageTitle = driver.findElement(By.xpath("//title[contains(text(),'Ryanair')]"));
+    		return pageTitle.isDisplayed();
+    	} catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
     }
     
     @FindBy(how=How.ID,using="input-button__departure") 

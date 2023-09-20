@@ -14,8 +14,13 @@ public class Bags extends AbstractComponent {
 	}
 	
 	 public boolean isBagsPageLoaded() {
-	    	WebElement pageTitle = driver.findElement(By.cssSelector("h3[contains(text(), 'Cabin Bags')]"));
-	        return pageTitle.isDisplayed();
+		 
+		 try {
+	    	WebElement bagsTitle = driver.findElement(By.xpath("//span[normalize-space()='Cabin Bags']"));
+	        return bagsTitle.isDisplayed();
+		 }catch (org.openqa.selenium.NoSuchElementException e) {
+	            return false;
+	        }
 	    }
 
 }

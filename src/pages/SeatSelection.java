@@ -2,6 +2,8 @@ package pages;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,20 +20,28 @@ public class SeatSelection extends AbstractComponent {
 	public SeatSelection(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this); // Initialize WebElements using PageFactory
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver");
 		// TODO Auto-generated constructor stub
 	}
 	
-	 @FindBy(how=How.ID,using="seat-11A")
+	public boolean isSeatSelectionPageLoaded() {
+        try {
+            WebElement seatsHeading = driver.findElement(By.xpath("//span[normalize-space()='Seats']"));
+            return seatsHeading.isDisplayed();
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
+	
+	 @FindBy(how=How.ID,using="seat-09A")
 	 WebElement firstSeat;
 	 
-	 @FindBy(how=How.ID,using="seat-11B")
+	 @FindBy(how=How.ID,using="seat-09B")
 	 WebElement secondSeat;
 	 
-	 @FindBy(how=How.ID,using="seat-11A")
+	 @FindBy(how=How.ID,using="seat-15A")
 	 WebElement thirdSeat;
 	 
-	 @FindBy(how=How.ID,using="seat-11B")
+	 @FindBy(how=How.ID,using="seat-15B")
 	 WebElement fourthSeat;
 	
 	 @FindBy(how=How.CSS,using=".ry-button")

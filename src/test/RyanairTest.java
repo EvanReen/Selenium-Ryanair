@@ -21,19 +21,19 @@ import pages.SeatSelection;
 public class RyanairTest {
 	
 	private WebDriver driver;
+
     private RyanairHome homePage;
     private Flights flightsPage;
     private LoginPage logInPage;
     private Passenger passengersPage;
     private SeatSelection seatsPage;
-    private Bags bagsPage;
 
     @BeforeClass
     public void setUp() {
-        
-    	//System.setProperty("webdriver.chrome.driver", "C:\\chromedriver");
+  
     	// Set up WebDriver
         driver = new ChromeDriver();
+        
         
         // Initialize Page Object classes
         homePage = new RyanairHome(driver);
@@ -41,7 +41,6 @@ public class RyanairTest {
         logInPage = new LoginPage(driver);
         passengersPage = new Passenger(driver);
         seatsPage = new SeatSelection(driver);
-        bagsPage = new Bags(driver);
     }
     
     @Test(priority = 1)
@@ -50,8 +49,8 @@ public class RyanairTest {
     	// Step 1: Open Ryanair home page
         homePage.goToHomePage();
         
-      //Maximizes the browser window
-    	driver.manage().window().maximize() ;
+        //Maximizes the browser window
+    	driver.manage().window().maximize();
         //Assert.assertTrue(homePage.isHomePageLoaded(), "Ryanair home page is not loaded.");
     	
     	//driver.manage().deleteAllCookies();
@@ -62,17 +61,21 @@ public class RyanairTest {
 
         // step 2: Perform search
         homePage.searchFlights();
+        //Assert.assertTrue(homePage.isHomePageLoaded(), "Home page is not loaded.");
         
         Thread.sleep(5000);
          
         // Step 3: Select suggested flights (e.g., "Regular" option)
-        Assert.assertTrue(flightsPage.isFlightsPageLoaded(), "Flights page is not loaded.");
+        // Check if the "Flights" page is loaded using the method from the FlightsPage class
         flightsPage.selectFlightOption();
+        Assert.assertTrue(flightsPage.isFlightsPageLoaded(), "Flights page is not loaded.");
         Thread.sleep(5000);
 
         // Step 4: Choose "Log in later"
         //Assert.assertTrue(logInPage.isLogInPageLoaded(), "Log in page is not loaded.");
+        // Check if the login page is loaded using the method from the LoginPage class
         logInPage.chooseLogInLater();
+        Assert.assertTrue(logInPage.isLogInPageLoaded(), "Login page is not loaded.");
         
         Thread.sleep(5000);
 
@@ -85,6 +88,8 @@ public class RyanairTest {
         
         //step 6: seats selection
         seatsPage.selectSeats();
+        Assert.assertTrue(seatsPage.isSeatSelectionPageLoaded(), "Seats page is not loaded.");
+        
         
         Thread.sleep(5000);
       //driver.manage().deleteAllCookies();
@@ -92,7 +97,9 @@ public class RyanairTest {
     	noThanks.click();
     	
     	Thread.sleep(5000);
-        //Assert.assertTrue(bagsPage.isBagsPageLoaded(), "Bags page is not loaded.");
+        
+    	
+    	//Assert.assertTrue(bagsPage.isBagsPageLoaded(), "Bags page is not loaded.");
         
     }
     
@@ -102,7 +109,8 @@ public class RyanairTest {
     }
     
 	public static void main(String[] args) {
-        // Run the TestNG test class
+        
+		// Run the TestNG test class
     	// Create an instance of TestNG
         TestNG testNG = new TestNG();
 

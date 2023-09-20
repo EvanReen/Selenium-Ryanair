@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,14 +15,16 @@ public class LoginPage extends AbstractComponent {
 		public LoginPage(WebDriver driver) {
 			super(driver);
 			PageFactory.initElements(driver, this); // Initialize WebElements using PageFactory
-	        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver");
 			// TODO Auto-generated constructor stub
 		}
 		
 		public boolean isLogInPageLoaded() {
-			// Implement logic to verify that the login page is loaded
-			return driver.getCurrentUrl().contains("login");
-			
+			try {
+	            WebElement loginTouchpoint = driver.findElement(By.xpath("//div[@class='login-touchpoint']"));
+	            return loginTouchpoint.isDisplayed();
+	        } catch (org.openqa.selenium.NoSuchElementException e) {
+	            return false;
+	        }			
 		}
 		
 		@FindBy(how=How.CSS,using=".login-touchpoint__login-later.title-m-lg.title-m-sm")

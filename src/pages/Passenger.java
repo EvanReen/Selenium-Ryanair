@@ -15,7 +15,6 @@ public class Passenger extends AbstractComponent{
 		public Passenger(WebDriver driver) {
 			super(driver);
 			PageFactory.initElements(driver, this); // Initialize WebElements using PageFactory
-	        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver");
 			// TODO Auto-generated constructor stub
 		}
 		

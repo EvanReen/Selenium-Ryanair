@@ -17,13 +17,17 @@ public class Flights extends AbstractComponent {
 	public Flights(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this); // Initialize WebElements using PageFactory
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver");
 		// TODO Auto-generated constructor stub
 	}
 	
 	public boolean isFlightsPageLoaded() {
-        // Implement logic to verify that the flights page is loaded
-        return driver.getCurrentUrl().contains("flights");
+		try {
+			// Implement logic to verify that the flights page is loaded
+			WebElement flightsHeading = driver.findElement(By.xpath("//span[normalize-space()='Flights']"));
+		    return flightsHeading.isDisplayed();
+		}catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }	    
     }
 	
 	@FindBy(how=How.CSS,using= "flight-info-new[class='flight-card__info ng-tns-c487942061-19'] div[class='flight-info__middle-block body-l-lg body-l-sm']")
@@ -32,7 +36,7 @@ public class Flights extends AbstractComponent {
 	@FindBy(how=How.CSS,using= "flight-info-new[class='flight-card__info ng-tns-c487942061-12'] div[class='flight-info__middle-block body-l-lg body-l-sm']")
 	WebElement destinationFlight;
 	
-	@FindBy(how=How.XPATH,using= "//th[@data-e2e='fare-card-regular']//div[@class='fare-table__fare-column-border']")
+	@FindBy(how=How.XPATH,using= "//div[@class='fare-table__fare-column-border fare-table__fare-column-border--regu']")
 	WebElement regularOption;
 	
 
